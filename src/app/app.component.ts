@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'jegybazar-fourth egy újabb';
+  isCollapsed = false;
+  message: string;
+
+  collapsed(): void {
+    this.message = 'collapsed';
+  }
+
+  expanded(): void {
+    this.message = 'expanded';
+  }
 }

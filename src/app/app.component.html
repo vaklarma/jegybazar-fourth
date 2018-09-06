@@ -34,7 +34,21 @@
   <!-- cards -->
 
   <div class="container">
-
+    <div class="row">
+      <div class="col-md-3">
+        <button type="button" class="btn btn-primary" (click)="isCollapsed = !isCollapsed"
+                [attr.aria-expanded]="!isCollapsed" aria-controls="collapseEvent">Toggle collapse
+        </button>
+      </div>
+      <div class="col-md-9">
+        <pre class="card card-block card-header">Event: {{message}}</pre>
+      </div>
+    </div>
+    <hr>
+    <div id="collapseEvent" class="card card-block card-header"
+         (collapsed)="collapsed()" (expanded)="expanded()" [collapse]="isCollapsed">
+      <div class="well well-lg">Some content</div>
+    </div>
     <div class="card-deck pt-5">
 
       <div class="col col-md-6 col-lg-4">
