@@ -2,10 +2,17 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
       <a class="navbar-brand" href="#">Jegybazár</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup">
+      <button
+        class="navbar-toggler"
+        type="button"
+        (click)="isCollapsed = !isCollapsed"
+
+        data-toggle="collapse"
+        data-target="#navbarNavAltMarkup">
+
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup" [collapse]="isCollapsed">
         <div class="navbar-nav ml-auto">
           <a class="nav-item nav-link active" href="index.html">Home</a>
           <a class="nav-item nav-link" href="esemenyek.html">Események</a>
@@ -34,21 +41,25 @@
   <!-- cards -->
 
   <div class="container">
-    <div class="row">
-      <div class="col-md-3">
-        <button type="button" class="btn btn-primary" (click)="isCollapsed = !isCollapsed"
-                [attr.aria-expanded]="!isCollapsed" aria-controls="collapseEvent">Toggle collapse
-        </button>
-      </div>
-      <div class="col-md-9">
-        <pre class="card card-block card-header">Event: {{message}}</pre>
-      </div>
-    </div>
-    <hr>
-    <div id="collapseEvent" class="card card-block card-header"
-         (collapsed)="collapsed()" (expanded)="expanded()" [collapse]="isCollapsed">
-      <div class="well well-lg">Some content</div>
-    </div>
+
+
+    <!--<div class="row">-->
+      <!--<div class="col-md-3">-->
+        <!--<button type="button" class="btn btn-primary" (click)="isCollapsed = !isCollapsed"-->
+                <!--[attr.aria-expanded]="!isCollapsed" aria-controls="collapseEvent">Toggle collapse-->
+        <!--</button>-->
+      <!--</div>-->
+      <!--<div class="col-md-9">-->
+        <!--<pre class="card card-block card-header">Event: {{message}}</pre>-->
+      <!--</div>-->
+    <!--</div>-->
+
+
+    <!--<hr>-->
+    <!--<div id="collapseEvent" class="card card-block card-header"-->
+         <!--(collapsed)="collapsed()" (expanded)="expanded()" [collapse]="isCollapsed">-->
+      <!--<div class="well well-lg">Some content</div>-->
+    <!--</div>-->
     <div class="card-deck pt-5">
 
       <div class="col col-md-6 col-lg-4">
